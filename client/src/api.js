@@ -29,8 +29,7 @@ async function request(path, { method = 'GET', body, staff = false } = {}) {
 }
 
 export const api = {
-  getMenu: () => request('/api/menu'),
-  placeOrder: (order) => request('/api/orders', { method: 'POST', body: order }),
+
   getOrder: (id) => request(`/api/orders/${id}`),
   login: (username, password) => request('/api/auth/login', { method: 'POST', body: { username, password } }),
   addMenuItem: (item) => request('/api/menu', { method: 'POST', body: item, staff: true }),
